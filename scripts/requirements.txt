@@ -1,0 +1,14 @@
+requests
+beautifulsoup4
+pandas
+schedule
+newsapi-python
+GoogleNews
+tweepy
+jupyterlab
+pandas
+matplotlib
+seaborn
+textblob
+scikit-learn
+xgboost

@@ -1,0 +1,3 @@
+# Optional packages for notebook experiments and advanced models.
+jupyterlab==4.2.1
+xgboost==2.0.3
