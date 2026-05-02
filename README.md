@@ -4,8 +4,8 @@ This project analyzes Donald Trump's claim that media coverage about him is fals
 It collects live data from X, news APIs, and fact-checking websites, then performs sentiment,
 media-bias, and truth-ratio analysis.
 
-The project is intentionally simple for beginners, but the structure is scalable enough to add
-more sources, models, and dashboards later.
+The project is intentionally simple for beginners. The main analysis interface is now a
+JupyterLab notebook, so the EDA and transformation steps are visible and easy to modify.
 
 ## Folder Structure
 
@@ -13,14 +13,13 @@ more sources, models, and dashboards later.
 trump-vs-bias-media/
 ├── config/
 │   └── media_bias_sources.csv
-├── dashboard/
-│   └── app.py
 ├── data/
 │   ├── raw/
 │   ├── processed/
 │   └── sample/
 │       └── sample_records.jsonl
 ├── notebooks/
+│   └── trump_media_bias_analysis.ipynb
 ├── scripts/
 ├── src/
 │   ├── collectors/
@@ -96,7 +95,7 @@ Use this first. It does not require API keys.
 
 ```bash
 python3 run_pipeline.py --sample
-streamlit run dashboard/app.py
+jupyter lab notebooks/trump_media_bias_analysis.ipynb
 ```
 
 ## Run With Live Data
@@ -105,7 +104,7 @@ Collect for the configured 2-3 day window:
 
 ```bash
 python3 run_pipeline.py
-streamlit run dashboard/app.py
+jupyter lab notebooks/trump_media_bias_analysis.ipynb
 ```
 
 Outputs:
@@ -117,12 +116,26 @@ Outputs:
 ## Beginner Workflow
 
 1. Run the sample pipeline.
-2. Open the dashboard.
+2. Open `notebooks/trump_media_bias_analysis.ipynb` in JupyterLab.
 3. Add API keys.
 4. Run live collection once per day for 2-3 days.
-5. Export charts and CSVs for your report.
+5. Re-run the notebook cells to refresh EDA, transformations, and charts.
+6. Export charts and CSVs for your report.
 
-## Optional Notebook Tools
+## Notebook Contents
+
+The main notebook includes:
+
+- data loading from processed, raw, or sample records
+- reusable data transformation with `analyze_records()`
+- missing-value and source-count EDA
+- sentiment distribution and sentiment-over-time charts
+- media-bias distribution and sentiment-by-bias charts
+- fact-check truth-vs-false ratio
+- evidence table for inspecting source records
+- conclusion template for a beginner research write-up
+
+## Optional Model Tools
 
 The old notebook template includes XGBoost experiments. Install optional packages only if you
 want to run those notebooks:
