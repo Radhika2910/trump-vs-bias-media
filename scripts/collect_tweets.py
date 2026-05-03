@@ -1,23 +1,3 @@
-"""
-Collect tweets about Trump and media bias using the X API v2.
-Appends records to output/records_raw.jsonl.
-
---- IMPORTANT: Fix required before this script will work ---
-The bearer token must come from a Twitter Developer App that is
-attached to a Project in the developer portal. To fix:
-  1. Go to https://developer.twitter.com/en/portal/dashboard
-  2. Create a new Project (Projects → New Project)
-  3. Move your existing App under that Project
-  4. The same X_BEARER_TOKEN in .env will then work
-This is free and takes about 2 minutes.
-
-If you'd rather skip Twitter entirely, use collect_reddit.py instead
-— Reddit's API is free and covers the same social media signal.
-
-Usage:
-    python scripts/collect_tweets.py
-"""
-
 import json
 import os
 from datetime import datetime, timedelta, timezone

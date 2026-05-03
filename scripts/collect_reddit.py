@@ -1,25 +1,3 @@
-"""
-Collect Reddit posts about Trump and media bias as a Twitter/X alternative.
-Searches across subreddits spanning left, right, and neutral communities
-to get a cross-spectrum view of public social media discourse.
-
-Requires REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET in .env.
-
-How to get free Reddit API credentials (takes ~2 minutes):
-  1. Log in to Reddit and go to https://www.reddit.com/prefs/apps
-  2. Click "create another app" at the bottom
-  3. Name: anything (e.g. "media-bias-study")
-  4. Type: select "script"
-  5. Redirect URI: http://localhost:8080 (doesn't matter for scripts)
-  6. Click "create app"
-  7. Copy the client_id (under the app name) and client_secret
-
-Appends records to output/records_raw.jsonl.
-
-Usage:
-    python scripts/collect_reddit.py
-"""
-
 import json
 import os
 from datetime import datetime, timezone

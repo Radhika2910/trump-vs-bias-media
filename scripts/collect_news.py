@@ -1,15 +1,3 @@
-"""
-Collect news articles about Trump and media bias from three APIs:
-  - NewsAPI   (newsapi.org)       — NEWSAPI_KEY
-  - GNews     (gnews.io)          — GNEWS_KEY
-  - Mediastack (mediastack.com)   — MEDIASTACK_KEY
-
-Appends records to output/records_raw.jsonl.
-
-Usage:
-    python scripts/collect_news.py
-"""
-
 import json
 import os
 from pathlib import Path
